@@ -1,6 +1,6 @@
 resource "aws_db_instance" "rds" {
   allocated_storage      = 20
-  db_name                = "wordpress-db"
+  db_name                = "wordpressdb"
   storage_type           = "gp2"
   engine                 = "mysql"
   engine_version         = "8.0"
