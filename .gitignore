@@ -2,7 +2,7 @@
 **/.terraform/*
 .terraform.lock.hcl
 .venv
-
+wordpress-key.pem
 # .tfstate files
 *.tfstate
 *.tfstate.*
