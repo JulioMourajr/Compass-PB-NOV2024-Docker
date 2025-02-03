@@ -101,3 +101,27 @@ resource "aws_security_group" "rds_sg" {
     Name = "rds_sg"
   }
 }
+
+resource "aws_security_group" "efs_sg" {
+  vpc_id      = aws_vpc.compass_vpc.id
+  description = "Security group for EFS."
+  name        = "efs_sg"
+
+  ingress {
+    description = "Allow NFS"
+    from_port   = 2049
+    to_port     = 2049
+    protocol    = "tcp"
+    cidr_blocks = ["0.0.0.0/0"]
+
+  }
+
+  egress {
+    description = "Allow all traffic out"
+    from_port   = 0
+    to_port     = 0
+    protocol    = "-1"
+    cidr_blocks = ["0.0.0.0/0"]
+  }
+
+}
