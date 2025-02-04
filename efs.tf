@@ -1,12 +1,12 @@
 resource "aws_efs_file_system" "wordpress_efs" {
-  creation_token = "wordpress-efs"
+  creation_token   = "wordpress-efs"
   performance_mode = "generalPurpose"
-  throughput_mode = "bursting"
-  encrypted = true
+  throughput_mode  = "bursting"
+  encrypted        = true
   tags = {
     Name = "wordpress-efs"
   }
-  
+
 }
 
 resource "aws_efs_mount_target" "wordpress_efs_mount_target" {
@@ -14,7 +14,7 @@ resource "aws_efs_mount_target" "wordpress_efs_mount_target" {
     subnet_a = aws_subnet.privada-app-A.id
     subnet_b = aws_subnet.privada-app-B.id
   }
-  file_system_id = aws_efs_file_system.wordpress_efs.id
+  file_system_id  = aws_efs_file_system.wordpress_efs.id
   security_groups = [aws_security_group.efs_sg.id]
-  subnet_id = each.value
+  subnet_id       = each.value
 }
