@@ -24,7 +24,7 @@ sudo mkdir -p /mnt/efs/wordpress
 
 sudo chmod -R 777 /mnt/efs
 
-echo "dns do efs" | sudo tee -a /etc/fstab
+echo "dns do efs:/ /mnt/efs nfs defaults,_netdev 0 0" | sudo tee -a /etc/fstab
 
 sudo mount -a  
 
