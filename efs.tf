@@ -2,6 +2,7 @@ resource "aws_efs_file_system" "wordpress_efs" {
   creation_token = "wordpress-efs"
   performance_mode = "generalPurpose"
   throughput_mode = "bursting"
+  encrypted = true
   tags = {
     Name = "wordpress-efs"
   }
