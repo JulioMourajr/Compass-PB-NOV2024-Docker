@@ -45,7 +45,7 @@ services:
     environment:
       WORDPRESS_DB_HOST: "endpoint do banco de dados"
       WORDPRESS_DB_USER: "admin"
-      WORDPRESS_DB_PASSWORD: "admin123"
+      WORDPRESS_DB_PASSWORD: "suasenha"
       WORDPRESS_DB_NAME: "wordpressdb"
 EOL
 
