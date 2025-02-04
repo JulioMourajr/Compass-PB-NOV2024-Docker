@@ -24,7 +24,7 @@ sudo mkdir -p /mnt/efs/wordpress
 
 sudo chmod -R 777 /mnt/efs
 
-echo "fs-0549487104426c35c.efs.us-east-1.amazonaws.com:/ /mnt/efs nfs defaults,_netdev 0 0" | sudo tee -a /etc/fstab
+echo "dns do efs" | sudo tee -a /etc/fstab
 
 sudo mount -a  
 
@@ -43,7 +43,7 @@ services:
     ports:
       - "80:80"
     environment:
-      WORDPRESS_DB_HOST: "terraform-20250204000346179700000002.cb0cgakgqbz1.us-east-1.rds.amazonaws.com"
+      WORDPRESS_DB_HOST: "endpoint do banco de dados"
       WORDPRESS_DB_USER: "admin"
       WORDPRESS_DB_PASSWORD: "admin123"
       WORDPRESS_DB_NAME: "wordpressdb"
