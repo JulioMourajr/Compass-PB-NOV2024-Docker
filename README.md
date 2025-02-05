@@ -94,8 +94,18 @@ Eficiência Operacional: Automação de tarefas de provisionamento, configuraç�
 - **RDS**: Banco de dados relacional para o WordPress.
 - **EFS**: Sistema de arquivos para armazenamento compartilhado.
 
+![Arquitetura do Projeto 2](./Arquirtetura2.png)
+
 ## Melhorias 
 
 # Monitoramento
 
 Implementar um sistema de monitoramento robusto utilizando Prometheus e Grafana para garantir a observabilidade da aplicação. Com o Prometheus, é possível coletar métricas detalhadas sobre o desempenho e a saúde dos componentes da infraestrutura. O Grafana, por sua vez, permite a criação de dashboards interativos e visualizações personalizadas, facilitando a análise e a identificação de possíveis problemas.
+
+# Modularização
+
+Refatorar o código Terraform para utilizar módulos. A criação de módulos permitirá a reutilização de componentes de infraestrutura em diferentes projetos, facilitando a manutenção e a escalabilidade do código. Por exemplo, criar módulos para VPC, sub-redes, grupos de segurança, instâncias EC2, Auto Scaling, Load Balancer, RDS e EFS.
+
+# Recurso Data
+
+Utilizar o recurso `data` do Terraform para obter informações sobre recursos existentes na AWS. Isso permitirá que o código seja mais dinâmico e adaptável a diferentes ambientes, sem a necessidade de hardcoding de valores. Por exemplo, obter IDs de AMIs, VPCs, sub-redes e grupos de segurança existentes.
