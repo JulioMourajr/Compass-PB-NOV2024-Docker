@@ -11,7 +11,7 @@ resource "aws_launch_template" "wordpress_template" {
   network_interfaces {
     subnet_id                   = aws_subnet.privada-app-A.id
     security_groups             = [aws_security_group.wordpress_sg.id]
-    associate_public_ip_address = true
+    associate_public_ip_address = false
   }
 
   tag_specifications {

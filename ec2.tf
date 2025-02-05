@@ -4,7 +4,7 @@ resource "aws_instance" "wordpress-instance1a" {
   subnet_id                   = aws_subnet.privada-app-A.id
   vpc_security_group_ids      = [aws_security_group.wordpress_sg.id]
   iam_instance_profile        = aws_iam_instance_profile.ec2_instance_profile.name
-  associate_public_ip_address = true
+  associate_public_ip_address = false
   key_name                    = "wordpress-key"
 
   user_data = base64encode(templatefile("${path.module}/userdata.sh", {
@@ -31,7 +31,7 @@ resource "aws_instance" "wordpress-instance1b" {
   subnet_id                   = aws_subnet.privada-app-B.id
   vpc_security_group_ids      = [aws_security_group.wordpress_sg.id]
   iam_instance_profile        = aws_iam_instance_profile.ec2_instance_profile.name
-  associate_public_ip_address = true
+  associate_public_ip_address = false
   key_name                    = "wordpress-key"
 
   tags = {
