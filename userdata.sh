@@ -1,5 +1,8 @@
 #!/bin/bash
 
+DB_ENDOINT=${db_endpoint}
+EFS_DNS_NAME=${efs_dns_name}
+
 sudo su
 
 cd /home/ec2-user
@@ -24,11 +27,11 @@ sudo mkdir -p /mnt/efs/wordpress
 
 sudo chmod -R 777 /mnt/efs
 
-echo "dns do efs:/ /mnt/efs nfs defaults,_netdev 0 0" | sudo tee -a /etc/fstab
+# Adicionar a entrada do EFS ao /etc/fstab pegando o DNS Name do EFS
+
+echo "${efs_dns_name}:/ /mnt/efs nfs defaults,_netdev 0 0" | sudo tee -a /etc/fstab
 
 sudo mount -a  
-
-cd /home/ec2-user
 
 cat <<EOL > /home/ec2-user/docker-compose.yaml
 version: '3.8'
@@ -43,9 +46,9 @@ services:
     ports:
       - "80:80"
     environment:
-      WORDPRESS_DB_HOST: "endpoint do banco de dados"
+      WORDPRESS_DB_HOST: "${db_endpoint}"
       WORDPRESS_DB_USER: "admin"
-      WORDPRESS_DB_PASSWORD: "suasenha"
+      WORDPRESS_DB_PASSWORD: "admin123"
       WORDPRESS_DB_NAME: "wordpressdb"
 EOL
 
