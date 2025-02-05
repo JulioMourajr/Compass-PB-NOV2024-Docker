@@ -6,7 +6,7 @@
 
 Este projeto foi desenvolvido com o objetivo de criar uma infraestrutura robusta e escalável na AWS, garantindo alta disponibilidade para a aplicação WordPress. Utilizando uma combinação de tecnologias modernas, conseguimos proporcionar uma solução eficiente e resiliente, capaz de atender a demandas variáveis de tráfego e garantir a continuidade do serviço.
 Decidimos utilizar Terraform para provisionar uma infraestrutura na AWS, uma ferramenta muito conhecida e com uma documentação muito abrangente.
-Infraestrutura como código (IaC) que o rovisionamento e gerenciamento de recursos de infraestrutura de maneira declarativa e automatizada.
+Infraestrutura como código (IaC) que o provisionamento e ogerenciamento de recursos de infraestrutura de maneira declarativa e automatizada.
 
 Amazon Web Services (AWS): Plataforma de serviços em nuvem que oferece uma ampla gama de serviços de computação, armazenamento e rede.
 VPC (Virtual Private Cloud): Rede virtual isolada onde todos os recursos são provisionados, garantindo segurança e controle de tráfego.
@@ -39,7 +39,7 @@ Eficiência Operacional: Automação de tarefas de provisionamento, configuraç�
 
 ## Pré-requisitos
 
-- [Terraform](https://www.terraform.io/downloads.html) v1.10.5 ou superior
+- Instale o [Terraform](https://www.terraform.io/downloads.html) v1.10.5 ou superior
 - Conta AWS com permissões adequadas
 - Chave SSH para acesso às instâncias EC2
 
@@ -47,8 +47,8 @@ Eficiência Operacional: Automação de tarefas de provisionamento, configuraç�
 
 1. Clone o repositório:
     ```sh
-    git clone https://github.com/seu-usuario/seu-repositorio.git
-    cd seu-repositorio
+    git clone https://github.com/JulioMourajr/Compass-PB-NOV2024-Docker
+    cd Compass-PB-NOV2024-Docker
     ```
 
 2. Inicialize o Terraform:
