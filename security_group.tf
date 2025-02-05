@@ -27,6 +27,15 @@ resource "aws_security_group" "wordpress_sg" {
     cidr_blocks = ["0.0.0.0/0"]
   }
 
+  ingress {
+    description = "Allow NFS"
+    from_port   = 2049
+    to_port     = 2049
+    protocol    = "tcp"
+    cidr_blocks = ["0.0.0.0/0"]
+
+  }
+
   egress {
     description = "Allow all traffic out"
     from_port   = 0
@@ -95,6 +104,14 @@ resource "aws_security_group" "rds_sg" {
     to_port     = 3306
     protocol    = "tcp"
     cidr_blocks = ["10.0.0.0/16"]
+  }
+
+  egress {
+    description = "Allow all outbound traffic"
+    from_port   = 0
+    to_port     = 0
+    protocol    = "-1"
+    cidr_blocks = ["0.0.0.0/0"]
   }
 
   tags = {

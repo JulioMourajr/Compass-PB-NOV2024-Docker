@@ -7,6 +7,11 @@ resource "aws_instance" "wordpress-instance1a" {
   associate_public_ip_address = true
   key_name                    = "wordpress-key"
 
+  user_data = base64encode(templatefile("${path.module}/userdata.sh", {
+    db_endpoint  = aws_db_instance.rds.endpoint,
+    efs_dns_name = aws_efs_file_system.wordpress_efs.dns_name
+  }))
+
   tags = {
     Name       = "PB - NOV 2024"
     CostCenter = "C092000024"
