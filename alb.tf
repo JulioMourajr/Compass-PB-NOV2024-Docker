@@ -28,7 +28,7 @@ resource "aws_lb_target_group" "wordpress_target_group" {
   vpc_id   = aws_vpc.compass_vpc.id
 
   health_check {
-    path                = "/"
+    path                = "/wp-admin/install.php"
     interval            = 30
     timeout             = 5
     healthy_threshold   = 5
