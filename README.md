@@ -65,7 +65,7 @@ Eficiência Operacional: Automação de tarefas de provisionamento, configuraç�
     region         = "us-east-1"
     ```
 
-2. Ajuste as variáveis no arquivo [variables.tf](http://_vscodecontentref_/0) conforme necessário.
+2. Ajuste as variáveis no arquivo [variables.tf](https://medium.com/@habbema/terraform-variables-e2f46ebe3f32) conforme necessário.
 
 ## Uso
 
